@@ -1,0 +1,13 @@
+<main>
+  <div class="wrap">
+    <tabs>
+      <tab tabIcon="fa fa-cloud" tabTitle="Current weather">
+		    <app-current-weather [data]="currentWeather"></app-current-weather>
+        <app-days-forecast [currentPage]="true" [data]="daysForecast"></app-days-forecast>
+      </tab>
+      <tab tabIcon="fa fa-calendar" tabTitle="5 day / 3 hour forecast">
+      	<app-days-forecast [data]="daysForecast"></app-days-forecast>
+      </tab>
+    </tabs>
+  </div>
+</main>

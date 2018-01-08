@@ -1,0 +1,207 @@
+/*current-weather*/
+.current-weather { 
+    float: left;
+    margin-top: 18px;
+    padding: 2% 2%;
+    width: 46%;
+    background: rgb(199, 212, 236);
+    text-align: left;  
+}
+.current-weather .location .name {
+    display: inline-block;
+    font-size: 66px;
+    line-height: 66px;
+    color: #245998;
+    font-weight: 600;
+}
+.current-weather .location .country{
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+.current-weather .location .country img{
+    margin-left:5px;
+}
+.current-weather .location .map{
+    display: block;
+    margin-left: 7px;
+    font-size: 18px;
+}
+.current-weather .location .map a{
+    color:white;
+}
+.current-weather .weather-image{
+    float: left;
+    margin-top: 0px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:#245998;
+}
+.current-weather .weather-image span{
+    background-image: url(/assets/images/weather_icons/large_sprite.png);
+    width: 130px;
+    height: 130px;
+    display: inline-block;
+}
+.icon-large.icon01d{
+    background-position: -130px 0px;
+}
+.icon-large.icon01n{
+    background-position: -260px -260px;
+}
+.icon-large.icon02d{
+    background-position: 0px -130px;
+}
+.icon-large.icon02n{
+    background-position: -130px -130px;
+}
+.icon-large.icon03d{
+    background-position: -260px 0px;
+}
+.icon-large.icon03n{
+    background-position: -260px -130px;
+}
+.icon-large.icon04d, .icon-large.icon04n{
+    background-position: 0px -260px;
+}
+.icon-large.icon09d{
+    background-position: -130px 260px;
+}
+.icon-large.icon09n{
+    background-position: 0px 0px;
+}
+.icon-large.icon10d{
+   background-position: 130px 0px;
+}
+.icon-large.icon10n{
+    background-position: 130px -130px;
+}
+.icon-large.icon11d, .icon-large.icon11n{
+    background-position: 130px 260px;
+}
+.icon-large.icon13d{
+    background-position: 0px 130px;
+}
+.icon-large.icon13n{
+    background-position: -130px 130px;
+}
+.icon-large.icon50n{
+    background-position: 130px 130px;
+}
+.icon-large.icon50d{
+    background-position: 260px 130px;
+}
+.current-weather .weather-image p{
+    margin-top: -14px;
+}
+.current-weather .time{
+    font-size: 36px;
+    color:white;
+}
+.current-weather .time span{
+    line-height: 40px;
+}
+.current-weather .time i {
+    margin-left: 7px;
+    margin-right: 1px;
+    margin-bottom: 3px;
+    vertical-align: middle;
+    line-height: 40px;
+    color: #245998;
+    font-size: 22px;
+}
+.current-weather .temperature-block {
+    float: left;
+    display: inline-block; 
+    vertical-align: middle;
+    font-size: 75px;
+    line-height: 137px;
+    color:white;
+}
+.current-weather .temperature-block b{
+    font-size: 114px;
+}
+.current-weather .temperature-block i {
+    font-size: 96px;
+    color: #245998;
+}
+.current-weather .weather-characteristics{
+    display: inline-block;
+}
+.current-weather .weather-characteristics .other{
+    display: inline-block;
+    width: 100%;
+}
+.current-weather .weather-characteristics .other .item{
+    display: inline-block;
+    font-size: 46px;
+    margin-right: 12px;
+    color:white;
+}
+.current-weather .weather-characteristics .other .item i{
+    color:#245998;
+    margin-right: 5px;	
+    margin-left: 15px;
+}
+.current-weather .weather-characteristics .other .item b{
+    font-size: 50px;
+}
+.current-weather .weather-characteristics .other .item p {
+    margin-top: -10px;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:#245998;
+}
+.location i, .weather-indicators i {
+    margin-right: 5px;
+    color: #245998;
+}
+/*current-date*/
+.current-date{
+    display: inline-block;
+    margin-left: 3px;
+    font-size: 24px;
+    color: rgb(36, 89, 153);
+}
+@media screen and (max-device-width: 1100px), screen and (max-width: 1100px){
+    .current-weather{
+        width: 56%;
+        margin-left: 20%;
+    }
+}
+@media screen and (max-device-width: 900px), screen and (max-width: 900px){
+    .current-weather{
+        width: 84%;
+        margin-left: 6%;
+    }
+}
+@media screen and (max-device-width:640px), screen and (max-width:640px){
+    .current-weather{
+        width: 92%;
+        margin: 2% 2%;
+    }
+    .current-weather .location .name {
+        font-size: 33px;
+        line-height: 40px;
+    }
+    .current-weather .weather-image {
+        margin-right: 0;
+        float: none;
+        text-align: center;
+    }
+    .current-weather .temperature-block {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .current-weather .weather-characteristics .other{
+        padding-bottom: 10px;
+        text-align: center;        
+    }
+}

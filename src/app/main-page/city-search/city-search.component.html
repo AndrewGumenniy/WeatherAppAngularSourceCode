@@ -1,0 +1,33 @@
+<!-- search-button -->
+<div class="search-field">
+  <input type="text" [(ngModel)]="city" placeholder="Enter your city name..." 
+  (keyup.enter)="searchCity(city)" (keyup.enter)="showExample=false" />
+  <button class="search-button" type="button" (click)="showExample=false" (click)="searchCity(city)" value="Search"  ><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+</div>
+<!-- search results -->
+<div class="city-list">
+  <h2 *ngIf="showExample">Example of weather forecast</h2>
+  <div class="item" *ngFor="let item of cityForecastItems">
+    <a routerLink="/{{item.id}}"> 
+      <div  class="weather-image">
+        <span title="{{item.weatherInfo}}" class="icon-middle icon{{item.weatherIcon}}"></span>
+      </div>
+      <div class="weather-text-blocks">
+  	    <div class="location">
+  	      <span class="name">{{item.city}}</span>
+  	      <span class="country">{{item.country}}<img src="https://openweathermap.org/images/flags/{{item.country|lowercase}}.png" alt=""></span>
+  	      <a target="_blank" (click)="$event.stopPropagation();" href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat={{item.coordinateLat}}&lon={{item.coordinateLon}}&zoom=12"><i class="fa fa-map" aria-hidden="true"></i>See  map</a>
+  	    </div>
+  	    <div class="weather-indicators">
+    	    <span> <i class="fa fa-thermometer-full" aria-hidden="true"></i><b>{{item.temperature| number:'1.0-0'}}</b>°C</span>
+    	    <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.humidity}}</b>%</span>
+    	    <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind| number:'1.0-1'}}</b>m/s</span>
+  	    </div>
+      </div>
+	  </a> 
+  </div> 
+  <!-- if results didn't find -->
+	<div class="not-found" *ngIf="cityForecastItems.length===0">
+    Nothing found on your request
+  </div>  
+</div>

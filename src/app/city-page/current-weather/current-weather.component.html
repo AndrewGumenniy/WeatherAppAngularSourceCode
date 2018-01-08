@@ -1,0 +1,33 @@
+<div class="current-weather">
+  <div  *ngFor="let item of data">
+    <div class="location">
+      <span class="name">{{item.city}}</span>
+      <span class="country">{{item.country}}<img src="https://openweathermap.org/images/flags/{{item.country|lowercase}}.png" alt=""></span>
+      <span class="map"><a target="_blank" href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat={{item.coordinateLat}}&lon={{item.coordinateLon}}&zoom=12"><i class="fa fa-map" aria-hidden="true"></i>See  map </a></span>
+    </div>
+    <div class="time">
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>{{today | date:'d MMM  HH:mm'}}</span><span class="current-date">UTC</span>
+    </div>
+    <div class="weather-characteristics"  >
+      <div  class="weather-image">
+        <span title="{{item.weatherInfo}}" class="icon-large icon{{item.weatherIcon}}"></span>
+        <p> {{item.weatherInfo}} </p>
+      </div>
+      <div class="temperature-block"> <i class="fa fa-thermometer-full" aria-hidden="true"></i> <b>{{item.temperature| number:'1.0-0'}}</b>°C</div>
+      <div class="other">
+        <div class="item">
+          <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.humidity}}</b>%</span> 
+          <p>Humidity</p>
+        </div>
+        <div class="item">
+          <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind| number:'1.0-1'}}</b>m/s</span>
+          <p>Wind</p>
+        </div>
+        <div class="item">
+          <span><i class="fa fa-cloud" aria-hidden="true"></i><b>{{item.cloudiness}}</b>%</span>
+          <p>Cloudiness</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

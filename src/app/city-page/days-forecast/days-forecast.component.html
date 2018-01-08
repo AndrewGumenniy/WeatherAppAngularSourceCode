@@ -1,0 +1,50 @@
+<!-- page with current weather -->
+<div class="forecast-list oneday-list" *ngIf="currentPage">
+  <div  *ngFor="let item of data| slice:0:8" >
+    <div class="item">
+      <div class="time">
+        {{item.time + "000"|date : "HH:mm"}}
+      </div>
+      <div class="weather-image">
+        <span title="{{item.weatherInfo}}" class="icon-small icon{{item.weatherIcon}}"></span>
+      </div>          
+      <div class="weather-text-blocks">
+        <div class="weather-indicators">
+          <span> <i class="fa fa-thermometer-full" aria-hidden="true"></i> <b>{{item.temperature| number:'1.0-0'}}</b>°C</span>
+          <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.humidity}}</b>%</span>
+          <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind| number:'1.0-1'}}</b>m/s</span>
+          <span><i class="fa fa-cloud" aria-hidden="true"></i><b>{{item.cloudiness}}</b>%</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div> 
+<!-- page with weather for 5 day -->
+<div class="forecast-list fiveday-forecast" *ngIf="!currentPage">
+  <div  *ngFor="let item of data; let i = 'index'">
+    <div  class="date-sign" *ngIf="i==0">
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>  
+      {{ item.time + "000" | date : "EEEE MMM d y" }} Today
+    </div>
+    <div class="date-sign" *ngIf="(item.time + '000'|date : 'HH:mm') =='02:00'">
+      <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> 
+      {{ item.time + "000" | date : "EEEE MMM d y" }}
+    </div>
+    <div class="item">
+      <div class="time">
+        {{item.time + "000"|date : "HH:mm"}}
+      </div>
+      <div  class="weather-image">
+        <span title="{{item.weatherInfo}}" class="icon-small icon{{item.weatherIcon}}"></span>
+      </div> 
+      <div class="weather-text-blocks">
+        <div class="weather-indicators">
+          <span> <i class="fa fa-thermometer-full" aria-hidden="true"></i> <b>{{item.temperature| number:'1.0-0'}}</b>°C</span>
+          <span><i class="fa fa-tint" aria-hidden="true"></i><b>{{item.humidity}}</b>%</span>
+          <span><i class="fa fa-flag" aria-hidden="true"></i><b>{{item.wind| number:'1.0-1'}}</b>m/s</span>
+          <span><i class="fa fa-cloud" aria-hidden="true"></i><b>{{item.cloudiness}}</b>%</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div> 
